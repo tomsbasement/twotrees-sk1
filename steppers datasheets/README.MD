@@ -1,0 +1,1 @@
+According to Twotrees, 42SHDC3045Z-16BD is the same as 17HS6401.
