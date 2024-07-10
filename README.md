@@ -51,8 +51,6 @@ make
 mv ~/klipper/out/klipper.bin ~/printer_data/
 ```
 
-![USB header](https://github.com/tomsbasement/twotrees-sk1/blob/main/images/usb-header.jpg?raw=true)
-
 You will have to migrate your configuration to new config folders :
 
 ```
@@ -72,7 +70,7 @@ Switch the printer on and wait for it to boot, then remove the microSD card.
 
 # Upgrade the TH board
 The TH board is communicating by USB with the mainboard. It isn't supplied with a USB connector so in order to update it, you will have to solder a header on it.
-I have chosen a JST connector that I soldered directly on the "USB" header.
+I have chosen a JST-XH 2.54 (4 pins) connector that I soldered directly on the "USB" header.
 Once done, I salvaged a USB cable in order to crimp a male JST connector on it.
 
 USB cables are repecting a color scheme so respect it and everything will be OK. If it doesn't work, reverse your JST connector because some USB cables are inverted (mine was).
@@ -107,3 +105,44 @@ sudo service klipper start
 ```
 
 Restart the printer and everything should be up to date !
+
+# Fans relocation
+I relocated the board and exhaust fans that are always on to controllable fan ports.
+Those ports are used for side fan and for the enclosure fan.
+As I don't use the enclosure, I decided to lower the noise of that printer.
+
+Crimp a JST-XH 2.54 (2 pins) connector to the mainboard fans.
+
+Plug it to fan0 port.
+Plug exhaust fan to fan1 port.
+
+![Fans plugs](https://github.com/tomsbasement/twotrees-sk1/blob/main/images/fans-relocation.jpg?raw=true)
+
+In your printer.cfg, comment everything related to PC9 and PC12 pins :
+
+```
+#[fan_generic fan2]
+#pin: PC9
+
+#[fan_generic fan3]
+#pin: PC12
+```
+
+Put this configuration instead :
+
+```
+[controller_fan controller_fan]
+pin: PC9
+kick_start_time: 0.5
+heater: heater_bed
+stepper: stepper_x,stepper_y,stepper_z,stepper_z1,stepper_z2,extruder
+
+[heater_fan exhaust_fan]
+pin: PC12
+max_power: 0.8
+shutdown_speed: 0.0
+kick_start_time: 5.0
+heater: heater_bed
+heater_temp: 65
+fan_speed: 1.0
+```
