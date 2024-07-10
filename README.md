@@ -4,7 +4,7 @@ This repository aims to help you to make upgrades and improvements on your Twotr
 
 Beware, it still needs you to have the required skills in Klipper and requires some soldering skills.
 
-This guide is based upon SK1 v2.02 firmware.
+This guide is based upon SK1 v2.02 firmware and is brought to you by [Tom's Basement](https://www.youtube.com/@TomsBasement/), my YouTube channel. So if you find it useful, consider supporting my work by subscribing to it !
 
 # Upgrade Klipper
 If you want to upgrade Klipper on the SK1 to the latest release, you will need to be able to flash the toolhead board (TH board) first.
