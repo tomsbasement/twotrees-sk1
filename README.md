@@ -69,7 +69,7 @@ Put the microSD card to the mainboard.
 Switch the printer on and wait for it to boot, then remove the microSD card.
 
 # Upgrade the TH board
-The TH board is communicating by USB with the mainboard. It isn't supplied with a USB connector so in order to update it, you will have to solder a header on it.
+The TH board is communicating by UART with the mainboard. It isn't supplied with a USB connector so in order to update it, you will have to solder a header on it.
 I have chosen a JST-XH 2.54 (4 pins) connector that I soldered directly on the "USB" header.
 Once done, I salvaged a USB cable in order to crimp a male JST connector on it.
 
