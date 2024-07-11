@@ -92,7 +92,7 @@ Disconnect the main cable on top of the board. The printer will beep (it's annoy
 
 ![Flash the board, step 1](https://github.com/tomsbasement/twotrees-sk1/blob/main/images/flash-step-1.jpg?raw=true)
 
-Boot the board in flash mode by pressing the boot button and then plugging the USB cable :
+Boot the board in flash mode by pressing the boot button and then plugging the USB cable to the board and to the printer.
 
 ![Flash the board, step 2](https://github.com/tomsbasement/twotrees-sk1/blob/main/images/flash-step-2.jpg?raw=true)
 
@@ -113,7 +113,7 @@ make flash FLASH_DEVICE=/dev/serial/by-id/usb-Klipper_stm32f401xc_50002100145131
 sudo service klipper start
 ```
 
-Restart the printer and everything should be up to date !
+Unplug the TH board and restart the printer. Everything should be up to date !
 
 # Fans relocation
 I relocated the board and exhaust fans that are always on to controllable fan ports.
