@@ -6,6 +6,13 @@ Beware, it still needs you to have the required skills in Klipper and requires s
 
 This guide is based upon SK1 v2.02 firmware and is brought to you by [Tom's Basement](https://www.youtube.com/@TomsBasement/), my YouTube channel. So if you find it useful, consider supporting my work by subscribing to it !
 
+- [TwoTrees SK1 Upgrade guide](#twotrees-sk1-upgrade-guide)
+- [Upgrade Klipper](#upgrade-klipper)
+- [Upgrade the mainboard](#upgrade-the-mainboard)
+- [Upgrade the TH board](#upgrade-the-th-board)
+- [Fans relocation](#fans-relocation)
+
+
 # Upgrade Klipper
 If you want to upgrade Klipper on the SK1 to the latest release, you will need to be able to flash the toolhead board (TH board) first.
 So don't go any further if you aren't able to do it (read the next section to know how to do it).
@@ -78,6 +85,8 @@ USB cables are repecting a color scheme so respect it and everything will be OK.
 ![USB color scheme](https://github.com/tomsbasement/twotrees-sk1/blob/main/images/usb-color-scheme.jpg?raw=true)
 
 ![USB header](https://github.com/tomsbasement/twotrees-sk1/blob/main/images/usb-header.jpg?raw=true)
+
+![USB plug](https://github.com/tomsbasement/twotrees-sk1/blob/main/images/jst-xh-usb.jpg?raw=true)
 
 Disconnect the main cable on top of the board. The printer will beep (it's annoying but normal).
 
