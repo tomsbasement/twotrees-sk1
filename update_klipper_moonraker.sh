@@ -13,7 +13,8 @@ git pull
 cd ~/moonraker
 git stash
 git pull
-./scripts/install-moonraker.sh -r -f
+./scripts/install-moonraker.sh -r -f -c /home/pi/klipper_config/moonraker.conf
+sudo sed -i 's|MOONRAKER_CONFIG_PATH="/home/mks/klipper_config/moonraker.conf"|MOONRAKER_CONFIG_PATH="/home/mks/printer_data/config/moonraker.conf"|' printer_data/systemd/moonraker.env
 cp ~/klipper_config/* ~/printer_data/config/
 sudo service moonraker restart
 

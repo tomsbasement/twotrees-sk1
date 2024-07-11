@@ -11,6 +11,7 @@ This guide is based upon SK1 v2.02 firmware and is brought to you by [Tom's Base
 - [Upgrade the mainboard](#upgrade-the-mainboard)
 - [Upgrade the TH board](#upgrade-the-th-board)
 - [Fans relocation](#fans-relocation)
+- [Change system timezone](#change-system-timezone)
 
 
 # Upgrade Klipper
@@ -31,7 +32,8 @@ cd ~/klipper
 git stash
 cd ~/moonraker
 git stash
-./scripts/install-moonraker.sh -r -f
+./scripts/install-moonraker.sh -r -f -c /home/pi/klipper_config/moonraker.conf
+sudo sed -i 's|MOONRAKER_CONFIG_PATH="/home/mks/klipper_config/moonraker.conf"|MOONRAKER_CONFIG_PATH="/home/mks/printer_data/config/moonraker.conf"|' printer_data/systemd/moonraker.env
 cp ~/klipper_config/* ~/printer_data/config/
 sudo service moonraker restart
 sudo chown -R mks:mks ~/klipper_config
@@ -43,6 +45,11 @@ In the console, launch KIAUH :
 ```
 
 Upgrade it when you are asked to, relaunch it and select Upgrade to upgrade your installation.
+
+You can finish by rebooting the system :
+```
+sudo reboot
+```
 
 # Upgrade the mainboard
 Now that Klipper is up to date, we can flash the mainboard with it.
@@ -159,4 +166,17 @@ kick_start_time: 5.0
 heater: heater_bed
 heater_temp: 65
 fan_speed: 1.0
+```
+
+# Change system timezone
+By default, system time is set in Asia. You can change your timezone by setting it like this :
+
+```
+sudo timedatectl set-timezone Europe/Brussels
+```
+
+Adapt "Europe/Brussels" by your local timezone. You can obtain the list of available timezones with the following command :
+
+```
+timedatectl list-timezones
 ```
