@@ -25,10 +25,15 @@ Password : makerbase
 
 First, we will save Twotrees modifications on Moonraker and Klipper :
 ```
+sudo sed -i 's|deb http://deb.debian.org/debian buster-backports|deb http://archive.debian.org/debian buster-backports|' /etc/apt/sources.list
+sudo sed -i 's|deb-src http://deb.debian.org/debian buster-backports|deb-src http://archive.debian.org/debian buster-backports|' /etc/apt/sources.list
 cd ~/klipper
 git stash
 cd ~/moonraker
 git stash
+./scripts/install-moonraker.sh -r -f
+cp ~/klipper_config/* ~/printer_data/config/
+sudo service moonraker restart
 sudo chown -R mks:mks ~/klipper_config
 ```
 
