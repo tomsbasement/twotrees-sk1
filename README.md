@@ -12,6 +12,7 @@ This guide is based upon SK1 v2.02 firmware and is brought to you by [Tom's Base
 - [Upgrade the TH board](#upgrade-the-th-board)
 - [Fans relocation](#fans-relocation)
 - [Change system timezone](#change-system-timezone)
+- [Update WiFi settings without screen](#update-wifi-settings-without-screen)
 
 
 # Upgrade Klipper
@@ -24,7 +25,7 @@ User : mks
 Password : makerbase
 ```
 
-First, we will save Twotrees modifications on Moonraker and Klipper :
+First, we will save Twotrees modifications on Moonraker and Klipper and update them :
 ```
 sudo sed -i 's|deb http://deb.debian.org/debian buster-backports|deb http://archive.debian.org/debian buster-backports|' /etc/apt/sources.list
 sudo sed -i 's|deb-src http://deb.debian.org/debian buster-backports|deb-src http://archive.debian.org/debian buster-backports|' /etc/apt/sources.list
@@ -179,4 +180,39 @@ Adapt "Europe/Brussels" by your local timezone. You can obtain the list of avail
 
 ```
 timedatectl list-timezones
+```
+
+# Update WiFi settings without screen
+If for any reason you lost the ability to use the screen and need to connect to a WiFi network, follow this :
+
+First, connect the printer using an ethernet cable to your network. Once it is done and you got a connection (check your router to get the IP), connect to it in SSH.
+
+Then edit the wpa_supplicant file :
+
+```
+sudo nano /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
+```
+
+It should contain the following information :
+
+```
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=BE
+
+network={
+        ssid="your-network-ssid"
+        psk="your-network-password"
+        key_mgmt=WPA-PSK
+}
+```
+
+Change "country" by your country ISO.
+Change ssid by your network ssid
+Change psk by your netork password.
+
+Then reboot the machine :
+
+```
+sudo reboot
 ```
