@@ -122,7 +122,7 @@ Flash the board :
 ```
 make
 sudo service klipper stop
-make flash FLASH_DEVICE=/dev/serial/by-id/usb-Klipper_stm32f401xc_500021001451313430333633-if00
+make flash FLASH_DEVICE=2e8a:0003
 sudo service klipper start
 ```
 
