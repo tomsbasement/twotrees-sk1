@@ -122,7 +122,7 @@ Flash the board :
 ```
 make
 sudo service klipper stop
-make flash FLASH_DEVICE=2e8a:0003
+sudo make flash FLASH_DEVICE=2e8a:0003
 sudo service klipper start
 ```
 
