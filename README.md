@@ -13,6 +13,9 @@ This guide is based upon SK1 v2.02 firmware and is brought to you by [Tom's Base
 - [Fans relocation](#fans-relocation)
 - [Change system timezone](#change-system-timezone)
 - [Update WiFi settings without screen](#update-wifi-settings-without-screen)
+- [Simple hardware upgrades](#simple-hardware-upgrades)
+  - [Put a high-flow nozzle](#put-a-high-flow-nozzle)
+  - [Change the PSU](#change-the-psu)
 
 
 # Upgrade Klipper
@@ -216,3 +219,23 @@ Then reboot the machine :
 ```
 sudo reboot
 ```
+
+# Simple hardware upgrades
+The SK1 is capable of really fast printing but it needs some help in order to reach its full potential. Some simple hardware upgrades can be done :
+
+## Put a high-flow nozzle
+The nozzle is only able to reach 21mm3/s with a 0.4 nozzle. Which is correct but not enough to use the maximum acceleration of the printer when trying to break 3D Benchy speed records 😁
+So I decided to swap it to a "cht clone" you can find here : [CHT clone for Bambu Lab hotend](https://s.click.aliexpress.com/e/_DEY6PtD)
+
+![Meanwell PSU](https://github.com/tomsbasement/twotrees-sk1/blob/main/images/high-flow-nozzle.png?raw=true)
+
+Thanks to that nozzle, you will be able to reach 26mm3/s with a 0.4 nozzle !
+
+## Change the PSU
+The PSU shipped with the printer is loud. Once the fan kicks in, it never stops.
+I decided to change it by an original Meanwell PSU, not a clone.
+Now the fan stops when the PSU cools down !
+
+The reference you can buy is Meanwell LRS-350 : [Meanwell LRS-350](https://s.click.aliexpress.com/e/_DkntJw3)
+
+![Meanwell PSU](https://github.com/tomsbasement/twotrees-sk1/blob/main/images/meanwell-lrs-350-psu.jpg?raw=true)
