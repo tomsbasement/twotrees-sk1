@@ -7,16 +7,22 @@ Beware, it still needs you to have the required skills in Klipper and requires s
 This guide is based upon SK1 v2.02 firmware and is brought to you by [Tom's Basement](https://www.youtube.com/@TomsBasement/), my YouTube channel. So if you find it useful, consider supporting my work by subscribing to it !
 
 - [TwoTrees SK1 Upgrade guide](#twotrees-sk1-upgrade-guide)
+- [Revert to stock firmware](#revert-to-stock-firmware)
 - [Upgrade Klipper](#upgrade-klipper)
 - [Upgrade the mainboard](#upgrade-the-mainboard)
 - [Upgrade the TH board](#upgrade-the-th-board)
 - [Fans relocation](#fans-relocation)
+- [Armbian 12](#armbian-12)
 - [Change system timezone](#change-system-timezone)
 - [Update WiFi settings without screen](#update-wifi-settings-without-screen)
 - [Simple hardware upgrades](#simple-hardware-upgrades)
   - [Put a high-flow nozzle](#put-a-high-flow-nozzle)
   - [Change the PSU](#change-the-psu)
 
+# Revert to stock firmware
+If you encounter any issue during upgrade process, you can revert back to TwoTrees stock firmware : https://wiki.twotrees3d.com/en/3DPrinterSeries/SK1#%E6%89%93%E5%8D%B0%E8%AE%BE%E7%BD%AE-3
+Then flash Klipper on your mainboard (with the old version provided by TwoTrees you have to put in the microSD card) and your toolhead board without upgrading Klipper before.
+Note : No help will be provided here if you crash your printer, you are 100% responsible of your actions.
 
 # Upgrade Klipper
 If you want to upgrade Klipper on the SK1 to the latest release, you will need to be able to flash the toolhead board (TH board) first.
@@ -171,6 +177,16 @@ heater: heater_bed
 heater_temp: 65
 fan_speed: 1.0
 ```
+
+# Armbian 12
+TwoTrees SK1 is provided with a fairly outdated firmware and OS : Armbian 10 with Klipper v0.10.
+A lot of improvements have been made since then and that printer can benefit from those progresses.
+If you successfuly upgraded your Klipper installation, you can test Armbian 12.
+I share with you my raw image you can use to upgrade your system.
+Note that due to incompatibilities, the screen is not working, you will have to use an additional remote screen like [BTT K-Touch](https://shrsl.com/4m9iq).
+Please read carefully the release notes : https://github.com/tomsbasement/twotrees-sk1/releases/tag/v0.1
+
+This image is based on the wonderful [Armbian MKSPI project](https://github.com/redrathnure/armbian-mkspi), thanks for making it possible!
 
 # Change system timezone
 By default, system time is set in Asia. You can change your timezone by setting it like this :
