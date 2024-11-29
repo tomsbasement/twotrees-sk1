@@ -3,6 +3,7 @@ The Twotrees SK1 is a good printer but it really lacks user-friendlyness. Howeve
 This repository aims to help you to make upgrades and improvements on your Twotrees SK1.
 
 Beware, it still needs you to have the required skills in Klipper and requires some soldering skills.
+**Please note that this guide requires knowledge of Linux systems, and that you should be comfortable modifying machines. I decline all responsibility if you break your machine. I won't be able to help you either, as I no longer own the SK1.**
 
 This guide is based upon SK1 v2.02 firmware and is brought to you by [Tom's Basement](https://www.youtube.com/@TomsBasement/), my YouTube channel. So if you find it useful, consider supporting my work by subscribing to it !
 
